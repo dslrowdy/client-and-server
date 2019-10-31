@@ -11,7 +11,7 @@ def Main():
 	while message != 'q':
 		s.send(message)
 		data = s.recv(1024)
-		print 'Received from server: ' + str(data)
+		print 'Converted text received from server: ' + str(data)
 		message = raw_input("Enter text for UPPER case conversion -> ")
 	s.close()
 
