@@ -9,14 +9,14 @@ def Main():
 
 	s.listen(1)
 	c, addr = s.accept()
-	print "Connection from: " + str(addr)
+	print "Successful connection from: " + str(addr)
 	while True:
 		data = c.recv(1024)
 		if not data:
 			break
-		print "from connected user: " + str(data)
+		print "Text from connected user: " + str(data)
 		data = str(data).upper()
-		print "sending: " + str(data)
+		print "Sending converted text: " + str(data)
 		c.send(data)
 	c.close
 
