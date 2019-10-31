@@ -10,9 +10,9 @@ def threaded(c):
                 if not data:
                         print_lock.release()
                         break
-               print ("Text received for conversion: " + str(data))
+                print ("Text received for conversion: " + str(data))
                 data = str(data).upper()
-               print ("Sending converted text: " + str(data))
+                print ("Sending converted text: " + str(data))
                 c.send(data)
         c.close()
 
