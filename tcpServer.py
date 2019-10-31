@@ -14,7 +14,7 @@ def Main():
 		data = c.recv(1024)
 		if not data:
 			break
-		print "Text from connected user: " + str(data)
+		print "Text received for conversion: " + str(data)
 		data = str(data).upper()
 		print "Sending converted text: " + str(data)
 		c.send(data)
