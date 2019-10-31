@@ -7,12 +7,12 @@ def Main():
 	s = socket.socket()
 	s.connect((host, port))
 
-	message = raw_input("-> ")
+	message = raw_input("Enter text for UPPER case conversion -> ")
 	while message != 'q':
 		s.send(message)
 		data = s.recv(1024)
 		print 'Received from server: ' + str(data)
-		message = raw_input("-> ")
+		message = raw_input("Enter text for UPPER case conversion -> ")
 	s.close()
 
 if __name__ == "__main__":
