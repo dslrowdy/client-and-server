@@ -10,9 +10,9 @@ def threaded(c):
                 if not data:
                         print_lock.release()
                         break
-#               print ("from connected user: " + str(data))
+               print ("Text received for conversion: " + str(data))
                 data = str(data).upper()
-#               print ("sending: " + str(data))
+               print ("Sending converted text: " + str(data))
                 c.send(data)
         c.close()
 
@@ -27,7 +27,7 @@ def Main():
         while True:
                 c, addr = s.accept()
                 print_lock.acquire()
-                print ("Connection from: " + str(addr))
+                print ("Successful connection from: " + str(addr))
                 start_new_thread(threaded, (c,))
         c.close()
 
